@@ -5,7 +5,7 @@ RUN yum install -y openssh-clients
 RUN yum install -y java
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
-RUN echo root:Santhi@1 | chpasswd
+RUN echo root:passwd@123 | chpasswd
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 ENV NOTVISIBLE "in users profile"
